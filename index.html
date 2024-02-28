@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Dokan</title>
+    <!-- daisy ui and tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="container mx-auto">
+      <header>
+        <h1 class="text-6xl text-white text-center">Mobile Dokan</h1>
+      </header>
+      <main>
+        <!-- input search -->
+        <div class="py-5 bg-gray-400 text-center mt-7 rounded-2xl">
+          <input
+            id="searchField"
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+          <button onclick="getSearchValue()" class="btn btn-warning">
+            Search
+          </button>
+        </div>
+
+        <!-- loader -->
+        <div id="loader" class="text-center my-7 hidden">
+          <span class="loading loading-spinner loading-lg text-white"></span>
+        </div>
+
+        <!-- display phone card -->
+        <section
+          id="displayPhoneCard"
+          class="mt-5 grid grid-cols-3 gap-6"
+        ></section>
+
+        <!-- show more btn -->
+        <div id="show_more" class="text-center my-8 hidden">
+          <button class="btn btn-primary">Show More</button>
+        </div>
+      </main>
+      <!-- modal -->
+      <dialog id="show_detail_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg" id="phoneName"></h3>
+          <div id="showw_detail_container"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <footer></footer>
+    </section>
+    <!-- scripts -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
